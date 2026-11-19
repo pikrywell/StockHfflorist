@@ -125,6 +125,7 @@ async function tampilDashboard() {
 
     } catch (error) {
         console.error(error);
+        tabel.innerHTML = "";
         buatBaris(tabel, ["Gagal mengambil data dari database."], 5);
     }
 }
@@ -140,6 +141,11 @@ if (formTambah) {
         const kategori = document.getElementById("kategori").value.trim();
         const jumlah = Number(document.getElementById("jumlah").value);
         const supplier = document.getElementById("supplier").value.trim();
+
+        if (!nama || !kategori) {
+            tampilPesan("Nama dan kategori harus diisi.", "red");
+            return;
+        }
 
         if (jumlah < 1 || !Number.isInteger(jumlah)) {
             tampilPesan("Jumlah harus berupa bilangan bulat lebih dari 0.", "red");
@@ -224,19 +230,40 @@ if (formKurangi) {
                 return;
             }
 
-            const { error } = await supabaseClient
-                .from("barang")
-                .update({
-                    jumlah: item.jumlah - jumlah
-                })
-                .eq("id", item.id);
+            const sisaStok = item.jumlah - jumlah;
 
-            if (error) throw error;
+            let hasil;
 
-            tampilPesan(
-                "Stok berhasil dikurangi. Keterangan: " + keterangan,
-                "green"
-            );
+            if (sisaStok === 0) {
+                // Menghapus barang jika stok mencapai 0
+                hasil = await supabaseClient
+                    .from("barang")
+                    .delete()
+                    .eq("id", item.id);
+            } else {
+                // Memperbarui jumlah stok jika masih tersisa
+                hasil = await supabaseClient
+                    .from("barang")
+                    .update({
+                        jumlah: sisaStok
+                    })
+                    .eq("id", item.id);
+            }
+
+            if (hasil.error) throw hasil.error;
+
+            if (sisaStok === 0) {
+                tampilPesan(
+                    "Stok habis. Barang berhasil dihapus dari daftar.",
+                    "green"
+                );
+            } else {
+                tampilPesan(
+                    "Stok berhasil dikurangi. Sisa stok: " + sisaStok +
+                    ". Keterangan: " + keterangan,
+                    "green"
+                );
+            }
 
             formKurangi.reset();
 
