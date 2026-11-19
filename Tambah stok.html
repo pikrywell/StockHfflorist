@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Hfflorist - Tambah Stok</title>
+    <link rel="stylesheet" href="stylefitur.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <h2>Stock Hfflorist</h2>
+            <p>Menu Utama</p>
+
+            <a href="ini main content.html">Dashboard</a>
+            <a href="Tambah stok.html" class="active">Tambah Stok</a>
+            <a href="Kurangi stok.html">Kurangi Stok</a>
+            <a href="cari stok.html">Cari Barang</a>
+           <a href="#" class="logout">Keluar</a>
+        </div>
+
+        <div class="main-content">
+
+            <div class="header">
+                <h1>Tambah Stok</h1>
+                <p>Masukkan data barang yang ingin ditambahkan.</p>
+            </div>
+
+            <div class="form-box">
+
+                <h2>Formulir Stok Masuk</h2>
+
+                <form id="formTambah">
+
+                    <label for="nama">Nama Barang</label>
+                    <input type="text" id="nama"
+                        placeholder="Masukkan nama barang" required>
+
+                    <label for="kategori">Kategori Barang</label>
+                    <input type="text" id="kategori"
+                        placeholder="Masukkan kategori barang" required>
+
+                    <label for="jumlah">Jumlah Barang</label>
+                    <input type="number" id="jumlah"
+                        placeholder="Masukkan jumlah barang"
+                        min="1" required>
+
+                    <label for="supplier">Supplier / Catatan</label>
+                    <input type="text" id="supplier"
+                        placeholder="Masukkan supplier atau catatan">
+
+                    <button type="submit" class="btn-add">
+                        Tambah Stok
+                    </button>
+
+                </form>
+
+                <p id="pesan"></p>
+
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="scriptsupabase.js"></script>
+<script src="stok.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stock Hfflorist - Dashboard</title>
+
+    <link rel="stylesheet" href="stylefitur.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+
+            <h2>Stock Hfflorist</h2>
+
+            <p>Menu Utama</p>
+
+            <a href="ini main content.html" class="active">Dashboard</a>
+            <a href="Tambah stok.html">Tambah Stok</a>
+            <a href="Kurangi stok.html">Kurangi Stok</a>
+            <a href="cari stok.html">Cari Barang</a>
+
+            <a href="#" class="logout">Keluar</a>
+
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+            <!-- Header -->
+            <div class="header">
+
+                <h1>Dashboard</h1>
+
+                <p>Selamat datang di Stock Hfflorist!</p>
+
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Jenis Barang</h3>
+                    <h2 id="totalJenis">0</h2>
+                    <p>Jenis barang tersimpan</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Seluruh Stok</h3>
+                    <h2 id="totalStok">0</h2>
+                    <p>Jumlah semua barang</p>
+                </div>
+
+                <div class="card">
+                    <h3>Stok Hampir Habis</h3>
+                    <h2 id="stokHabis">0</h2>
+                    <p>Barang dengan stok 5 atau kurang</p>
+                </div>
+
+            </div>
+
+            <!-- Inventory Table -->
+            <div class="table-box">
+
+                <h2>Data Barang</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Barang</th>
+                            <th>Kategori</th>
+                            <th>Jumlah Stok</th>
+                            <th>Supplier / Catatan</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tabelBarang">
+
+                        <tr>
+                            <td colspan="5">Belum ada data barang.</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="scriptsupabase.js"></script>
+<script src="stok.js"></script>
+</body>
+</html>

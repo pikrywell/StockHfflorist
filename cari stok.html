@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Hfflorist - Cari Barang</title>
+    <link rel="stylesheet" href="stylefitur.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <h2>Stock Hfflorist</h2>
+            <p>Menu Utama</p>
+
+            <a href="ini main content.html">Dashboard</a>
+            <a href="Tambah stok.html">Tambah Stok</a>
+            <a href="Kurangi stok.html">Kurangi Stok</a>
+            <a href="cari stok.html" class="active">Cari Barang</a>
+          <a href="#" class="logout">Keluar</a>
+        </div>
+
+        <div class="main-content">
+
+            <div class="header">
+                <h1>Cari Barang</h1>
+                <p>Cari barang berdasarkan nama atau kategori.</p>
+            </div>
+
+            <div class="search-box">
+
+                <h2>Pencarian Barang</h2>
+
+                <form id="formCari">
+
+                    <label for="keyword">Nama atau Kategori Barang</label>
+
+                    <div class="search-input">
+
+                        <input type="text" id="keyword"
+                            placeholder="Ketik nama atau kategori barang"
+                            required>
+
+                        <button type="submit" class="btn-search">
+                            Cari
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="result-box">
+
+                <h2>Hasil Pencarian</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nama Barang</th>
+                            <th>Kategori</th>
+                            <th>Jumlah Stok</th>
+                            <th>Supplier / Catatan</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="hasilCari">
+                        <tr>
+                            <td colspan="4">Silakan cari barang terlebih dahulu.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="scriptsupabase.js"></script>
+<script src="stok.js"></script>
+</body>
+</html>

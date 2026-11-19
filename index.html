@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hfflorist Login</title>
+
+    <link rel="stylesheet" href="stylekik.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="login">
+
+            <h1>Stock Hfflorist</h1>
+            <p>Silakan Login</p>
+
+            <form id="loginForm">
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan email admin"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan password"
+                    required
+                >
+
+                <button type="submit">Login</button>
+
+                <p id="pesan"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="scriptsupabase.js"></script>
+<script src="login.js"></script>
+</body>
+</html>
+
+

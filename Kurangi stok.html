@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Hfflorist - Kurangi Stok</title>
+    <link rel="stylesheet" href="stylefitur.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <h2>Stock Hfflorist</h2>
+            <p>Menu Utama</p>
+
+            <a href="ini main content.html">Dashboard</a>
+            <a href="Tambah stok.html">Tambah Stok</a>
+            <a href="Kurangi stok.html" class="active">Kurangi Stok</a>
+            <a href="cari stok.html">Cari Barang</a>
+            <a href="#" class="logout">Keluar</a>
+        </div>
+
+        <div class="main-content">
+
+            <div class="header">
+                <h1>Kurangi Stok</h1>
+                <p>Masukkan data barang yang ingin dikurangi.</p>
+            </div>
+
+            <div class="form-box">
+
+                <h2>Formulir Stok Keluar</h2>
+
+                <form id="formKurangi">
+
+                    <label for="namaKurangi">Nama Barang</label>
+                    <input type="text" id="namaKurangi"
+                        placeholder="Masukkan nama barang" required>
+
+                    <label for="jumlahKurangi">Jumlah yang Dikurangi</label>
+                    <input type="number" id="jumlahKurangi"
+                        placeholder="Masukkan jumlah barang"
+                        min="1" required>
+
+                    <label for="keterangan">Keterangan</label>
+                    <input type="text" id="keterangan"
+                        placeholder="Masukkan alasan pengurangan" required>
+
+                    <button type="submit" class="btn-reduce">
+                        Kurangi Stok
+                    </button>
+
+                </form>
+
+                <p id="pesan"></p>
+
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="scriptsupabase.js"></script>
+<script src="stok.js"></script>
+</body>
+</html>
